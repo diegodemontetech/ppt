@@ -1,0 +1,13 @@
+[Unit]
+Description=PostgREST Service
+After=postgresql.service
+
+[Service]
+ExecStart=/usr/local/bin/postgrest /etc/postgrest.conf
+Type=simple
+User=postgres
+Group=postgres
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
